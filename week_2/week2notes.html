@@ -22,7 +22,22 @@
     try, typeof, var, volatile, void, while, with, yield<br><br>
     These words should have been reserved by the language but aren't: undefined, NaN, Infinity.<br><br>
     let and const have block scope, whereas var does not. Keep that in mind.<br><br>
-    Interestingly, template literals were introduced to JavaScript. It allows interpolation of JavaScript code. This is similarly done in C#.<br>
+    Interestingly, template literals were introduced to JavaScript. It allows interpolation of JavaScript code. This is similarly done in C#.<br><br>
+    Arrays in JavaScript do not have to contain the same type of data. It can contain a mixture of different data types.<br>
+    "Popping" data off an array does not reduce the size of the array. The empty slots in the array are left as undefined. To remove the slot<br>
+    completely, you'll need to reduce the size of the array. Alternatively, you can use splice().<br><br>
+    Sets seem to be like arrays but not as strict. It is possible to have memory leaks while using sets, so be wary.<br><br>
+    Creating maps in JavaScript require the 'new' operator.<br><br>
+    The ternary operator is a shorthand way of writing and 'if/else' statement.<br>
+    JavaScript switch statements are similarly written to C++ switch statements.<br>
+    Loops in JavaScript have a similar syntax to those in C++. JavaScript does have a 'for of' loop that warrants investigation.<br><br>
+    Declaring functions in JavaScript is similar to C++ but you don't have to specify the return type of the function.<br>
+    Functions can be declared using an "arrow", which looks like this '=>'. It is useful for short, anonymous functions.<br>
+    Consider using these arrow anonymous functions for callbacks in functions.
+    <br><br>Questions:<br>
+    -What really is the difference between a set and an array? They seem to be very similar.<br>
+    -Why don't normal sets have garbage-collection?<br>
+    -How does the 'for of' loop work? Is it better to use than conventional 'for' loops?<br>
   </blockquote>
 </body>
 </html>
