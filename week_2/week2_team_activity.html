@@ -1,13 +1,190 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<meta charset="UTF-8">
-<style>
-</style>
 <head>
-  <title>Week 2 Team Activity</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 02 Team Activity</title>
+    <style>
+        h2 { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        #display1::before { content: "Name: "; }
+        #display2::before { content: "Sum of all numbers: " }
+        #display3::before { content: "Calculate: " }
+        input, div { display: inline; }
+        div { color: red; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; }
+        div::before { color: black; }
+    </style>
 </head>
-<body style="background-color:#3a506b;">
-  <h1 style="color:#f7f7ff; font-family:georgia;">Week 2 Team Activity</h1>
-  <button onclick="window.location.href = 'index.html';">Back to Week 2</button><br><br>
+<body>
+    <h1 style="color:#f7f7ff; font-family:georgia;">Week 2 Team Activity</h1>
+    <button onclick="window.location.href = 'index.html';">Back to Week 2</button><br><br>
+    <!-- Core Requirement 1 -->
+    <section>
+        <h2>Display Name Function</h2>
+        <p>Type your name to write it in red.</p>
+        <input type="text" id="myInput">
+        <div id="display1"></div><br>
+        <button type="button" onclick="writeContent()">Write Name</button>
+    </section>
+    <hr>
+    <!-- Core Requirement 1 -->
+
+    <!-- Core Requirement 2 -->
+    <section>
+        <h2>Rolling Sum Function</h2>
+        <p>This will take your number, add all the numbers preceding it<br>
+            (i.e. 1+2+3+4...etc.) then display the sum total.</p>
+        <input type="number" id="myNumber">
+        <div id="display2"></div><br>
+        <button type="button" onclick="getSum()">Sum</button>
+
+    </section>
+    <hr>
+    <!-- Core Requirement 2 -->
+
+    <!-- Core Requirement 3 -->
+    <section>
+        <h2>Calculator Function</h2>
+        <p> Use the box from the "Rolling Sum Function" as your first number<br>
+            and the box below as your second. Then, press the button below that matches<br>
+            the operation you want to perform.</p>
+        <input type="number" id="myNumber2">
+        <div id="display3"></div><br>
+        <button type="button" name="add" onclick="calculate(this.name)"><b>+</b></button>
+        <button type="button" name="subtract" onclick="calculate(this.name)"><b>-</b></button>
+        <button type="button" name="multiply" onclick="calculate(this.name)"><b>*</b></button>
+        <button type="button" name="divide" onclick="calculate(this.name)"><b>/</b></button>
+
+    </section>
+    <!-- Core Requirement 3 -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 </body>
+
+<script>
+
+    // global variables for each input/output field
+    let input;
+    let num1;
+    let num2;
+    let display1 = document.getElementById('display1');
+    let display2 = document.getElementById('display2');
+    let display3 = document.getElementById('display3');
+
+
+    /* Stretch Requirement 1 - Arrow Function */
+    const errorStyle = (input1, input2, color) => {
+            input1.style = "background-color: " + color;
+            input2.style = "background-color: " + color;
+        }
+    /* Stretch Requirement 1 - Arrow Function */
+
+
+    /* Core Requirement 1 */
+    function writeContent() {
+
+        /* Stretch Requirement 1 - Function Expression */
+        const logged = function() {
+            return display1.innerHTML = document.getElementById('myInput').value;
+        };
+        logged();
+        /* Stretch Requirement 1 - Function Expression */
+    }
+    /* Core Requirement 1 */
+
+
+    /* Core Requirement 2 */
+    function getSum() {
+        // get the input value
+        num1 = parseInt(document.getElementById('myNumber').value);
+
+        // start the rolling sum
+        let numbers = 0;
+
+        // add each number, starting with 1, ending with the user's input, incrementing by 1 each step
+        for(let i = 1; i <= num1; i++) {
+            numbers += i;
+        }
+        // display the rolling sum
+        display2.innerHTML = numbers;
+    }
+    /* Core Requirement 2 */
+
+
+    /* Core Requirement 3 */
+    function addInputs() {
+        num1 = parseInt(document.getElementById('myNumber').value);
+        num2 = parseInt(document.getElementById('myNumber2').value);
+        display3.innerHTML = num1 + num2;
+    }
+    /* Core Requirement 3 */
+
+    /* Stretch Requirement 2 - DRY (don't repeat yourself) */
+    function writeEquation(n1, n2, operator) {
+        // Creates a string to display the equation being calculated
+        return n1 + " " + operator + " " + n2 + " = ";
+    }
+    /* Stretch Requirement 2 - DRY (don't repeat yourself) */
+
+
+    /* Stretch Requirement 1 - Add more features */
+
+    // Calculator function that takes 2 numbers and an operator to provide
+    // an answer to a simple mathematical problem
+    function calculate(operator) {
+
+        // get the two input elements
+        let input1 =  document.getElementById('myNumber');
+        let input2 =  document.getElementById('myNumber2');
+
+        // reset the input boxes background color to default
+        errorStyle(input1, input2, 'default');
+
+        // parse the values from those inputs
+        let num1 = parseInt(input1.value);
+        let num2 = parseInt(input2.value);
+
+        // change the switch case to error if missing a number
+        if(!num1 || !num2) {
+            operator = "error";
+        }
+
+        switch(operator) {
+
+            // Add case
+            case "add":
+                display3.innerHTML = writeEquation(num1, num2, "+") + parseInt(num1 + num2);
+                break;
+
+            // Subtract case
+            case "subtract":
+                display3.innerHTML = writeEquation(num1, num2, "-") + parseInt(num1 - num2);
+                break;
+
+            // Multiply case
+            case "multiply":
+                display3.innerHTML = writeEquation(num1, num2, "*") + parseInt(num1 * num2);
+                break;
+
+            // Divide case
+            case "divide":
+                display3.innerHTML = writeEquation(num1, num2, "/") + parseFloat(num1 / num2);
+                break;
+
+            // Error case (for missing value)
+            case "error":
+
+                // display error message
+                display3.innerHTML = "Please fill in both fields in order to use the calculator.";
+
+                // highlight the required fields
+                errorStyle(input1, input2, "yellow");
+
+                break;
+        }
+    }
+    /* Stretch Requirement 1 - Add more features */
+
+</script>
 </html>
