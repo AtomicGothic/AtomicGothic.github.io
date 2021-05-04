@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<meta charset="UTF-8">
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <title>Adam Goff's Week 3 Notes</title>
+</head>
+<body style="background-color:#3a506b;">
+  <h1 style="color:#f7f7ff; font-family:georgia;">Week 3 Notes</h1>
+  <button onclick="window.location.href = 'index.html';">Back to Week 3</button><br><br>
+  <blockquote style="color:#f7f7ff; font-family:arial; font-size: 20px">
+    The 'this' keyword did take some getting used to for me when I first encountered it in my C++ classes. It's very handy once you understand<br>
+    what it is. In short, 'this' just refers to the current iteration of a given object.<br><br>
+    Declaring objects and accessing the methods and member variables within these objects seems to be similar to C++, although apparently one can<br>
+    access member variables with brackets and single quotes. That one can't do in C++.<br>
+    To add a new property into an object, you can use the '.' operator followed by the name of the new property and then set that to whatever value<br>
+    desired. Use the delete operator to delete a given property from the object. Objects can also be nested within objects.<br><br>
+    Note: Objects are copied by reference. The copied object merely points to the original. Changes to either reference will change the other.<br><br>
+    To prevent naming collisions, consider using namespaces for potentially repeated generic names of functions or properties.<br><br>
+    JSON is a very powerful and incredibly useful tool for building APIs. I've used JSON when getting data from an API call. I know C# has functions<br>
+    that will parse the data as needed and desired.<br><br>
+    Beware of rounding errors with floating numbers. Computers use base 2 math, which is binary. Consequently, it is difficult to have accurate floating<br>
+    numbers when working with base 2 math. Just make sure your code has some tolerance and doesn't require a high degree of accuracy for floating numbers.<br><br>
+    Don't use the getYear() method, since it is not Y2K compliant.<br><br>
+    I just learned about RegExp in my database class. I imagine JavaScript and MySQL can work nicely together when using RegExp to call and make queries.<br><br>
+    DOM is a wonderful tool to allow modifications to the various parts of an HTML page.<br><br>
+    Each element should have a unique ID. Having the same ID for multiple HTML elements will cause odd behavior.<br><br>
+    Use 'classList' to modify a particular element's class rather than using 'className'. Using the latter will modify all other classes that have<br><br>
+    already been set on the element.<br><br>
+    DOM has event listeners that allow you to link JavaScript code to a particular action. For example, if you click on a picture, you can have<br>
+    some function run to make the picture do something.<br>
+    Don't use 'click' and 'doubleclick' on the same element. It will likely cause some unexpected behavior because the two listeners may overlap each other.<br><br>
+    Don't use anonymous functions as arguments for adding event listeners if you want to eventually remove that listener.<br><br>
+    <br><br>Questions:<br>
+    -Are there alternative equivalent technologies to JSON?<br>
+    -Why is JavaScript inconsistent with requiring the 'new' keyword when creating a new object? Sometimes you can use '{}' and sometimes you can't.
+    -Why not make the getYear() function Y2K compliant?
+    -Why use touch events at all? It seems better to stick with the click events.
+  </blockquote>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</body>
+</html>
