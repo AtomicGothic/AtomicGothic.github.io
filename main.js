@@ -21,10 +21,11 @@ function loadLinkList() {
 
     for (var i = 0; i < links.length; i++){
         textLabel = document.createTextNode(links[i].label);
-        listTag = document.createElement("LI");
+        listTag = document.createElement("a");
         listTag.appendChild(textLabel);
-        listTag.setAttribute("onclick", "window.location.href='" + links[i].url + "';");
-        document.getElementById("linkList").appendChild(listTag);
+        listTag.setAttribute("class", "nav-link");
+        listTag.setAttribute("onclick", "href='" + links[i].url + "';");
+        document.getElementById("navBarList").appendChild(listTag);
     }
 
 }
