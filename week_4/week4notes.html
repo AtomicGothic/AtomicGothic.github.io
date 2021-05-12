@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<meta charset="UTF-8">
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <title>Adam Goff's Week 4 Notes</title>
+</head>
+<body style="background-color:#3a506b;">
+  <h1 style="color:#f7f7ff; font-family:georgia;">Week 4 Notes</h1>
+  <button onclick="window.location.href = 'index.html';">Back to Week 4</button><br><br>
+  <blockquote style="color:#f7f7ff; font-family:arial; font-size: 20px">
+    Forms are probably the most common way we interact with websites. Websites typically exist to gather information from and give<br>
+    information to the user. Forms are a way to gather information from the user. One must remember though that all software and websites<br>
+    exist for the user. Therefore, the interface must be designed for humans. Refer back to CSE 471 for user interface concepts.<br><br>
+    Forms are stored in an array in the order they appear on the webpage.<br><br>
+    Don't use the reset button to clear out the whole form unless you have a really good reason for it. It's typically considered bad practice.<br><br>
+    Alerts are not considered good practice to give user feedback<br><br>
+    Normally, submitting a form with the "submit" keyword will send the form data to the back-end to be processed. To interrupt this process,<br>
+    use preventDefault().<br><br>
+    Be sure to indicate what type of input the input element is.<br><br>
+    Input types can be checkboxes. Note that you can iterate through the array of forms that are checkboxes to see how many are checked. Useful for<br>
+    large selection options.<br><br>
+    Radio types are like checkboxes but only one option can be selected<br><br>
+    There are many input types. Different input types are useful for gathering different kinds of information. Think of it as setting data types<br>
+    when declaring variables in C++. You want to make sure that you are getting the right kind of data in the right place.<br><br>
+    Make sure you validate the data in the forms you create. Validation should occur both on the front end and on the back end. For security reasons,<br>
+    the back end validation should be the one to rely on because the front end JavaScript validation can be bypassed by savvy users, but JavaScript<br>
+    validation should still be used to create a better user experience.<br><br>
+    I didn't realize that JavaScript could be written in object oriented fashion. Also, it is fortunate that ES6 offers class declaration similar<br>
+    to other languages like Java and C++, since that is what I'm more familiar with.<br><br>
+    Remember, the whole point of OOP is to have code be modular and reusable. Don't have your classes, methods, and functions do more than what they<br>
+    ought to do. If you need to code new functionality, put it in a different method or maybe a whole new class. Additionally, try to keep coupling minimal<br>
+    Code that has high coupling runs the risk of spaghettification.<br><br>
+    Making class variables private is not done the same way as in C++. Variables can be made private only be limiting scope of the variable. In other words<br>
+    declare the variable inside the constructor.<br><br>
+    <br><br>Questions:<br>
+    -What is the difference between text, textarea, and blockquote elements?
+    -Why is monkey-patching frowned upon in the JavaScript community? Is the consensus warranted?
+  </blockquote>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</body>
+</html>
