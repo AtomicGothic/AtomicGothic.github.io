@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <script src="main.js"></script>
+  <script src="./main.js"></script>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -49,15 +49,13 @@
   <!-- The To Do App Frame -->
   <main role="main" class="inner cover">
     <h1 style="color:#f7f7ff; font-family:georgia;">Todos</h1>
-    <div id="tasks">
-        <ol id="taskList">
-        </ol>
+    <div class="taskList" id="tasks">
     </div><br><br>
     <div id="addTaskDiv">
-        <form id="taskForm">
-            <input id="taskInput" input="text">
-            <button id="addTask" value="submit">+
-        </form>
+        <fieldset id="taskForm">
+            <input id="taskInput" type="text">
+            <button id="addTask" onclick="addTask()">+</button>
+        </fieldset>
     </div>
   </main>
   <footer class="mastfoot mt-auto">
