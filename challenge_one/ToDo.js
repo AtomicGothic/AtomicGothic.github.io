@@ -23,8 +23,8 @@ export default class ToDo{
     }
 
     //setters
-    setToDoList(toDos){
-        this.toDos = toDos;
+    setToDoList(toDosList){
+        toDos = toDosList;
     }
 
     // function to render given toDos to screen

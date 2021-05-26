@@ -1,7 +1,7 @@
 import ToDo from './ToDo.js'
 import {addTodo, addToLocalStorage, getFromLocalStorage} from './ls.js'
-var toDoObj = new ToDo();
 
+export var toDoObj = new ToDo();
 
 // add an eventListener on form, and listen for submit event
 toDoObj.getToDoForm().addEventListener('submit', function(event) {
@@ -27,4 +27,3 @@ toDoObj.getToDoItemsList().addEventListener('click', function(event) {
 getFromLocalStorage();
 
 
-export default toDoObj;

@@ -1,5 +1,6 @@
-import toDoObj from './main.js'
+import {toDoObj} from './main.js'
 
+var toDoList = [];
 // function to add todo
 export function addTodo(item) {
     // if item is not empty
@@ -21,11 +22,11 @@ export function addTodo(item) {
   }
 
   // function to add toDos to local storage
-export function addToLocalStorage(toDosList) {
+export function addToLocalStorage(toDos) {
     // convert the array to string then store it.
-    localStorage.setItem('toDos', JSON.stringify(toDosList));
+    localStorage.setItem('toDos', JSON.stringify(toDos));
     // render them to screen
-    toDoObj.renderToDos(toDosList);
+    toDoObj.renderToDos(toDos);
   }
 
   // function helps to get everything from local storage
@@ -34,7 +35,8 @@ export function getFromLocalStorage() {
     // if reference exists
     if (reference) {
       // converts back to array and store it in toDos array
-      toDoObj.setToDoList(JSON.parse(reference));
+      toDoList = JSON.parse(reference);
+      toDoObj.setToDoList(toDoList);
       toDoObj.renderToDos(toDoObj.getToDoList());
     }
   }

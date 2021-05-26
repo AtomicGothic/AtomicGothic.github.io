@@ -1,4 +1,4 @@
-import toDoObj from './main.js'
+import {toDoObj} from './main.js'
 
 // add an eventListener on form, and listen for submit event
 toDoObj.getToDoForm().addEventListener('submit', function(event) {
