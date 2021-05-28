@@ -47,11 +47,19 @@
 
   <!-- The To Do App Frame -->
   <main role="main" class="inner cover">
+    <button onclick="window.location.href = '../index.html';">Back to Portfolio</button><br><br>
     <h1 style="color:#f7f7ff; font-family:georgia;">ToDos</h1>
     <div class="toDoContainer">
       <ul class="toDoItems">
       </ul>
-    </div><br><br>
+    </div><br>
+    <div class="inner">
+      <nav class="nav nav-masthead justify-content-center" id="toDoFilter">
+        <p style="margin-right: 20px" id="allToDoFilter">All</p>
+        <p style="margin-right: 20px" id="activeToDoFilter">Active</p>
+        <p style="margin-right: 20px" id="completedToDoFilter">Completed</p>
+      </nav>
+    </div><br>
     <div id="addTaskDiv">
         <form class="toDoForm">
             <input type="text" class="toDoInput" placeholder="Enter a task...">

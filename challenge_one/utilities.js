@@ -1,22 +1,65 @@
 import {toDoObj} from './main.js'
 
-// add an eventListener on form, and listen for submit event
-toDoObj.getToDoForm().addEventListener('submit', function(event) {
-    // prevent the page from reloading when submitting the form
-    event.preventDefault();
-    toDoObj.addTodo(toDoObj.getToDoInput().value); // call addTodo function with input box current value
-  });
+export function displayAllToDos(){
+  //reverts the other filters to white
+  if (document.getElementById("activeToDoFilter").style.color === "green"){
+    document.getElementById("activeToDoFilter").style.color = "#f7f7ff";
+  }
+  if (document.getElementById("completedToDoFilter").style.color === "green"){
+    document.getElementById("completedToDoFilter").style.color = "#f7f7ff";
+  }
 
-toDoObj.getToDoItemsList().addEventListener('click', function(event) {
-    // check if the event is on checkbox
-    if (event.target.type === 'checkbox') {
-      // toggle the state
-      toDoObj.toggle(event.target.parentElement.getAttribute('data-key'));
-    }
+  //set the clicked element to green
+  document.getElementById("allToDoFilter").style.color = "green";
 
-    // check if that is a delete-button
-    if (event.target.classList.contains('delete-button')) {
-      // get id from data-key attribute's value of parent <li> where the delete-button is present
-      toDoObj.deleteTodo(event.target.parentElement.getAttribute('data-key'));
+  //all items on todo list should be visible
+  for (let i = 0; i < document.getElementsByClassName("item").length; i++){
+    document.getElementsByClassName("item")[i].style.visibility = "visible";
+  }
+}
+
+export function displayActiveToDos(){
+  //reverts the other filters to white
+  if (document.getElementById("allToDoFilter").style.color === "green"){
+    document.getElementById("allToDoFilter").style.color = "#f7f7ff";
+  }
+  if (document.getElementById("completedToDoFilter").style.color === "green"){
+    document.getElementById("completedToDoFilter").style.color = "#f7f7ff";
+  }
+
+  //set the clicked element to green
+  document.getElementById("activeToDoFilter").style.color = "green";
+
+  //go through all items on the todo list and only make invisible the items that checked off
+  for (let i = 0; i < document.getElementsByClassName("item").length; i++){
+    if(document.getElementsByClassName("checkbox")[i].checked === false){
+      document.getElementsByClassName("item")[i].style.visibility = "collapse";
     }
-  });
+    if(document.getElementsByClassName("checkbox")[i].checked === true){
+      document.getElementsByClassName("item")[i].style.visibility = "visible";
+    }
+  }
+}
+
+export function displayCompletedToDos() {
+  //reverts the other filters to white
+  if (document.getElementById("allToDoFilter").style.color === "green"){
+    document.getElementById("allToDoFilter").style.color = "#f7f7ff";
+  }
+  if (document.getElementById("activeToDoFilter").style.color === "green"){
+    document.getElementById("activeToDoFilter").style.color = "#f7f7ff";
+  }
+
+  //set the clicked element to green
+  document.getElementById("completedToDoFilter").style.color = "green";
+
+  //go through all items on the todo list and make invisible only the items that are not checked off
+  for (let i = 0; i < document.getElementsByClassName("item").length; i++){
+    if(document.getElementsByClassName("checkbox")[i].checked === true){
+      document.getElementsByClassName("item")[i].style.visibility = "collapse";
+    }
+    if(document.getElementsByClassName("checkbox")[i].checked === false){
+      document.getElementsByClassName("item")[i].style.visibility = "visible";
+    }
+  }
+}
