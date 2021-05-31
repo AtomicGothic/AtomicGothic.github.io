@@ -32,10 +32,10 @@ export function displayActiveToDos(){
 
   //go through all items on the todo list and only make invisible the items that checked off
   for (let i = 0; i < document.getElementsByClassName("item").length; i++){
-    if(document.getElementsByClassName("checkbox")[i].checked === false){
+    if(document.getElementsByClassName("checkbox")[i].checked === true){
       document.getElementsByClassName("item")[i].style.visibility = "collapse";
     }
-    if(document.getElementsByClassName("checkbox")[i].checked === true){
+    if(document.getElementsByClassName("checkbox")[i].checked === false){
       document.getElementsByClassName("item")[i].style.visibility = "visible";
     }
   }
@@ -55,10 +55,10 @@ export function displayCompletedToDos() {
 
   //go through all items on the todo list and make invisible only the items that are not checked off
   for (let i = 0; i < document.getElementsByClassName("item").length; i++){
-    if(document.getElementsByClassName("checkbox")[i].checked === true){
+    if(document.getElementsByClassName("checkbox")[i].checked === false){
       document.getElementsByClassName("item")[i].style.visibility = "collapse";
     }
-    if(document.getElementsByClassName("checkbox")[i].checked === false){
+    if(document.getElementsByClassName("checkbox")[i].checked === true){
       document.getElementsByClassName("item")[i].style.visibility = "visible";
     }
   }
