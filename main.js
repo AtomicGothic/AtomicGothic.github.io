@@ -25,6 +25,11 @@ const links = [
     },
 
     {
+        label: "Week 7",
+        url: "week_7/index.html"
+    },
+
+    {
         label: "Challenge One",
         url: "challenge_one/index.html"
     }
