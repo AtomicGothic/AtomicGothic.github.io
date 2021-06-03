@@ -74,7 +74,7 @@ class CommentModel {
   
     addSubmitListener(postName) {
       // use element.ontouchend to avoid more than one listener getting attached at a time to the button.
-      document.getElementById('commentSubmit').ontouchend = () => {
+      document.getElementById('commentSubmit').onclick = () => {
         // debugger;
         this.model.addComment(
           postName,
