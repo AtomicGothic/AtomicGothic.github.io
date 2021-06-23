@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <!--Custom JavaScript-->
+    <script src=""></script>
+
+    <title>Recipes</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/starter-template/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="/docs/4.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+</head>
+    <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#">HomeChef</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="home.html">Home</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="pantry.html">Pantry</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Recipes<span class="sr-only">(current)</a>
+        </li>
+    </ul>
+    </div>
+    </nav>
+
+    <main role="main" class="container">
+        <br><br>
+        <div class="starter-template">
+            <h1>Search for Recipes</h1>
+            <p class="lead">Enter an ingredient</p>
+            <input type="text" id="recipeSearch">
+            <button class="btn btn-primary btn-md" onclick="findRecipes();">Search</button>
+        </div>
+        <div class="starter-template" id="recipeSearchResults">
+            <ul class="list-group" id="ulSearchedRecipes">
+            </ul>
+        </div>
+
+        <br><br>
+        <div class="starter-template">
+            <h1>Recommended Recipes</h1>
+            <button class="btn btn-primary btn-md" onclick="loadRecipes();">Get Recipes</button>
+        </div>
+
+        <div class="starter-template" id="recipeResults">
+            <ul class="list-group" id="ulRecommendedRecipes">
+            </ul>
+        </div>
+
+    </main><!-- /.container -->
+</body>
+</html>

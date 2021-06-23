@@ -47,6 +47,11 @@ const links = [
     {
         label: "Challenge One",
         url: "challenge_one/index.html"
+    },
+
+    {
+        label: "Challenge Two",
+        url: "challenge_one/home.html"
     }
 ]
 
