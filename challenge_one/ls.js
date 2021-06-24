@@ -40,4 +40,3 @@ export function getFromLocalStorage() {
       toDoObj.renderToDos(toDoObj.getToDoList());
     }
   }
-  
