@@ -51,7 +51,7 @@ const links = [
 
     {
         label: "Challenge Two",
-        url: "challenge_one/home.html"
+        url: "challenge_two/home.html"
     }
 ]
 
