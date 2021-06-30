@@ -14,7 +14,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <!--Custom JavaScript-->
-    <script src=""></script>
 
     <title>Recipes</title>
 
@@ -36,10 +35,10 @@
         <li class="nav-item">
             <a class="nav-link" href="home.html">Home</a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item">
             <a class="nav-link" href="pantry.html">Pantry</span></a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
             <a class="nav-link" href="#">Recipes<span class="sr-only">(current)</a>
         </li>
     </ul>
@@ -52,7 +51,7 @@
             <h1>Search for Recipes</h1>
             <p class="lead">Enter an ingredient</p>
             <input type="text" id="recipeSearch">
-            <button class="btn btn-primary btn-md" onclick="findRecipes();">Search</button>
+            <button type="submit" class="btn btn-primary btn-md">Search</button>
         </div>
         <div class="starter-template" id="recipeSearchResults">
             <ul class="list-group" id="ulSearchedRecipes">
@@ -62,16 +61,14 @@
         <br><br>
         <div class="starter-template">
             <h1>Recommended Recipes</h1>
-            <button class="btn btn-primary btn-md" onclick="loadRecipes();">Get Recipes</button>
         </div>
-
-        <div class="starter-template" id="recipeResults">
-            <ul class="list-group" id="ulRecommendedRecipes">
+        <div class="starter-template recipesDiv">
+            <ul class="list-group" id="recipeList">
             </ul>
         </div>
 
     </main><!-- /.container -->
     <script src="config.js" type="module"></script>
-    <script src="index.js" type="module"></script>
+    <script src="recipe_view.js" type="module"></script>
 </body>
 </html>

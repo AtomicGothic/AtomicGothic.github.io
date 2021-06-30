@@ -33,7 +33,7 @@ export default class Pantry{
         // clear everything inside <ul> with class=todo-items
         pantryItemsList.innerHTML = '';
 
-        // run through each item inside toDos
+        // run through each item inside myPantry
         myPantry.forEach(function(item) {
           // make a <li> element and fill it
           // <li> </li>
@@ -56,17 +56,17 @@ export default class Pantry{
         });
 
       }
-      // function to add todo
+      // function to add pantry item
       addPantryItem(item) {
         // if item is not empty
         if (item !== '') {
-          // make a todo object, which has id, name, and completed properties
+          // make a pantryItem object, which has id and name
           const pantryItem = {
             id: Date.now(),
             name: item
           };
 
-          // then add it to toDos array
+          // then add it to myPantry array
           myPantry.push(pantryItem);
           addToLocalStorage(myPantry); // then store it in localStorage
 
@@ -75,9 +75,9 @@ export default class Pantry{
         }
       }
 
-      // deletes a todo from toDos array, then updates localStorage and renders updated list to screen
+      // deletes an item from myPantry array, then updates localStorage and renders updated list to screen
       deletePantryItem(id) {
-        // filters out the <li> with the id and updates the toDos array
+        // filters out the <li> with the id and updates the myPantry array
         myPantry = myPantry.filter(function(item) {
           return item.id != id;
         });
