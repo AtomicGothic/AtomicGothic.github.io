@@ -29,3 +29,10 @@ export function getFromLocalStorage(){
         myPantry.renderPantry(myPantry.getPantryItemsList());
     }
 }
+
+export function getCurrentPageFileName() {
+    // Splits each part of the current URL as an array split by '/'.
+    // Since the split function returns an array that starts at zero, getting the
+    //   final part of the pathname bust be the length of the array minus 1.
+    return window.location.pathname.split('/')[(window.location.pathname.split('/')).length - 1];
+}
