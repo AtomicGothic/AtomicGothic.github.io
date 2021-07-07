@@ -1,4 +1,4 @@
-import { addToLocalStorage, getFromLocalStorage } from "./utilities.js";
+import { addToLocalStorage, setPantryFromLocalStorage } from "./utilities.js";
 // local private variables
 const pantryForm = document.querySelector('.pantryForm');
 const pantryInput = document.querySelector('.pantryInput')

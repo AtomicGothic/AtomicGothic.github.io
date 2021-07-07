@@ -1,5 +1,5 @@
 import Pantry from "./pantry.js";
-import { getFromLocalStorage, getCurrentPageFileName } from "./utilities.js";
+import { setPantryFromLocalStorage, getCurrentPageFileName } from "./utilities.js";
 
 export let myPantry = new Pantry();
 
@@ -17,5 +17,5 @@ if ( pantry_view_html === "pantry.html"){
         }
     });
 
-    getFromLocalStorage();
+    setPantryFromLocalStorage();
 }

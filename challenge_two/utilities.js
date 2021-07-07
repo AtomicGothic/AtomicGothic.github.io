@@ -21,12 +21,25 @@ export function addToLocalStorage(pantryItems) {
     myPantry.renderPantry(pantryItems);
 }
 
-export function getFromLocalStorage(){
+export function setPantryFromLocalStorage(){
     const reference = localStorage.getItem('pantry');
     if (reference) {
         pantryList = JSON.parse(reference);
         myPantry.setMyPantryList(pantryList);
         myPantry.renderPantry(myPantry.getPantryItemsList());
+    }
+}
+
+export function getIngredientsFromLocalStorage(){
+    const reference = localStorage.getItem('pantry');
+    let ingredients = [];
+    if (reference) {
+        pantryList = JSON.parse(reference);
+
+        for (let i = 0; i < pantryList.length; i++){
+            ingredients.push(pantryList[i].name);
+        }
+        return ingredients;
     }
 }
 

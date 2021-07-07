@@ -8,9 +8,9 @@ export default class Recipe {
     }
 
     async getRecipesSuggestions(ingredients){
-        const query = this.baseUrl + ingredients[0];
-        for (var i = 1; i < ingredients.length(); i++){
-            query = query + ",+" + ingredients[1];
+        let query = this.baseUrl + "ingredients=" + ingredients[0];
+        for (var i = 1; i < ingredients.length; i++){
+            query = query + ",+" + ingredients[i];
         }
         console.log(query);
         this._recipes = await getJSON(query);
