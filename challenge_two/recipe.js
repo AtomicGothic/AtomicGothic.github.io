@@ -16,4 +16,11 @@ export default class Recipe {
         this._recipes = await getJSON(query);
         return this._recipes;
     }
+
+    async getSearchedRecipes(ingredient){
+        let query = this.baseUrl + "ingredients=" + ingredient;
+        console.log(query);
+        this._recipes = await getJSON(query);
+        return this._recipes;
+    }
 }

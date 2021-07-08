@@ -10,13 +10,40 @@ async function getMySuggestedRecipes(){
     return recipes;
 }
 
-async function renderSuggestionRecipes(recipes){
+async function getRecipesBySearchedIngredient(){
+    const recipes = await myRecipes.getSearchedRecipes(document.getElementById('recipeSearch').value);
+    return recipes;
+}
+
+async function renderSuggestedRecipes(recipes){
     console.log(recipes);
     let ul = document.getElementById('recipeList');
+    ul.innerHTML = '';
     recipes.then(function(value){
         value.forEach(x =>{
             let li = document.createElement('li');
+            let img = document.createElement('img');
             ul.appendChild(li);
+            ul.appendChild(img);
+            img.setAttribute('src', x.image);
+            li.innerHTML += x.title;
+        }),
+        function(error) {
+            console.log(error);
+        };
+    });
+};
+async function renderSearchedRecipes(recipes){
+    console.log(recipes);
+    let ul = document.getElementById('ulSearchedRecipes');
+    ul.innerHTML = '';
+    recipes.then(function(value){
+        value.forEach(x =>{
+            let li = document.createElement('li');
+            let img = document.createElement('img');
+            ul.appendChild(li);
+            ul.appendChild(img);
+            img.setAttribute('src', x.image);
             li.innerHTML += x.title;
         }),
         function(error) {
@@ -26,9 +53,13 @@ async function renderSuggestionRecipes(recipes){
 };
 
 if(recipe_view_html === "recipes.html"){
-    document.querySelector('.recipesForm').addEventListener('submit', function(event){
+    document.querySelector('.searchRecipesForm').addEventListener('submit', function(event){
         event.preventDefault();
-        renderSuggestionRecipes(getMySuggestedRecipes());
+        renderSearchedRecipes(getRecipesBySearchedIngredient());
+    });
+    document.querySelector('.loadRecipesForm').addEventListener('submit', function(event){
+        event.preventDefault();
+        renderSuggestedRecipes(getMySuggestedRecipes());
     });
 }
 

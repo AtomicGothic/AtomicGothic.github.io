@@ -50,8 +50,10 @@
         <div class="starter-template">
             <h1>Search for Recipes</h1>
             <p class="lead">Enter an ingredient</p>
-            <input type="text" id="recipeSearch">
-            <button type="submit" class="btn btn-primary btn-md">Search</button>
+            <form class="searchRecipesForm">
+                <input type="text" id="recipeSearch">
+                <button type="submit" class="btn btn-primary btn-md">Search</button>
+            </form>
         </div>
         <div class="starter-template" id="recipeSearchResults">
             <ul class="listSearchedRecipes" id="ulSearchedRecipes">
@@ -63,7 +65,7 @@
             <h1>Recommended Recipes</h1>
         </div>
         <div class="loadRecipesDiv">
-            <form class="recipesForm">
+            <form class="loadRecipesForm">
                 <button class="btn btn-primary btn-md loadButton" type="submit" value="Load Suggested Recipes">Get Suggested Recipes</button>
             </form>
         </div>
