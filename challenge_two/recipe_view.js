@@ -11,12 +11,18 @@ async function getMySuggestedRecipes(){
 }
 
 async function renderSuggestionRecipes(recipes){
+    console.log(recipes);
     let ul = document.getElementById('recipeList');
-    for(let i = 0; i < recipes.length; i++){
-        let li = document.createElement('li');
-        ul.appendChild(li);
-        li.innerHTML += recipes[i].title;
-    };
+    recipes.then(function(value){
+        value.forEach(x =>{
+            let li = document.createElement('li');
+            ul.appendChild(li);
+            li.innerHTML += x.title;
+        }),
+        function(error) {
+            console.log(error);
+        };
+    });
 };
 
 if(recipe_view_html === "recipes.html"){
